@@ -3,7 +3,7 @@ use quote::{format_ident, quote};
 use syn::parse::{Parse, ParseStream};
 use syn::{
     braced, parse_macro_input, token::Group, DeriveInput, Expr, Field, Ident, LitInt, LitStr,
-    Result, Token,
+    Result, Token, Punctuated
 };
 
 enum AoCItem {
@@ -18,15 +18,16 @@ struct AoCProblem {
 }
 
 impl Parse for AoCProblem {
-    fn parse(input: ParseStream) -> Result<Self> {
+    fn parse(input: ParseStream) -> Result<Self> {\
+
         let year: LitInt = input.parse()?;
-        let _comma = input.parse::<Token![,]>()?;
+        input.parse::<Token![,]>()?;
 
         let day: LitInt = input.parse()?;
-        let _comma = input.parse::<Token![,]>()?;
+        input.parse::<Token![,]>()?;
 
         let name: LitStr = input.parse()?;
-        let _comma = input.parse::<Token![,]>()?;
+        input.parse::<Token![,]>()?;
 
         let input: LitStr = input.parse()?;
 
@@ -36,7 +37,7 @@ impl Parse for AoCProblem {
             name,
             input,
         })
-    }
+    }p
 }
 
 #[proc_macro]
