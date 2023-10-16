@@ -4,3 +4,6 @@
 [submodule "other-projects/rust-pg"]
 	path = other-projects/rust-pg
 	url = git@github.com:fractalis/rust-pg.git
+[submodule "other-projects/Rust-Algos"]
+	path = other-projects/Rust-Algos
+	url = git@github.com:fractalis/Rust-Algos.git
