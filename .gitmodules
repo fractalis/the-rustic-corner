@@ -1,0 +1,6 @@
+[submodule "other-projects/rust-incubator"]
+	path = other-projects/rust-incubator
+	url = git@github.com:fractalis/rust-incubator.git
+[submodule "other-projects/rust-pg"]
+	path = other-projects/rust-pg
+	url = git@github.com:fractalis/rust-pg.git
