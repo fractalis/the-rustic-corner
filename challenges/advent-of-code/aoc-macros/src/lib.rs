@@ -57,6 +57,7 @@ pub fn aoc_problem(args: TokenStream) -> TokenStream {
         input,
     } = aoc_problem;
     let tokens = quote! {
+        use std::fmt::{Display, Formatter};
 
         pub struct #var_name {
             pub year: i32,
@@ -67,9 +68,9 @@ pub fn aoc_problem(args: TokenStream) -> TokenStream {
 
         impl #var_name {
             pub fn new() -> Self {
-                let inputFileName = #input.to_string();
+                let input_file_name = #input.to_string();
 
-                let input_data = std::fs::read_to_string(&inputFileName).expect("File does not exist");
+                let input_data = std::fs::read_to_string(&input_file_name).expect("File does not exist");
 
                 Self {
                     year: #year as i32,
@@ -77,6 +78,12 @@ pub fn aoc_problem(args: TokenStream) -> TokenStream {
                     name: #name.to_string(),
                     input: input_data,
                 }
+            }
+        }
+
+        impl Display for #var_name {
+            fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+                write!(f, "Day {:02}: {:^24}", self.day, self.name)
             }
         }
     };
