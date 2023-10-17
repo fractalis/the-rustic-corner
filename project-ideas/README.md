@@ -2,7 +2,6 @@
 
 This is a list of project ideas that are tailored for implementing in Rust. These are categorized based on category, crate, difficulty, time requirement, skill and current status, and description. These are partially generated using ChatGPT as inspiration.
 
-|----|---------------|---------|--------------|------------------|------------------------|-------------|-------------------------------------------------------|
 | #  | Category      | Crate   | Difficulty   | Time Requirement | Skill Focus            | Status      | Description                                           |
 |----|---------------|---------|--------------|------------------|------------------------|-------------|-------------------------------------------------------|
 | 1  | Game          | rand    | Beginner     | < 1 Week         | Logic                  | Not Started | Dice Simulator for Games                              |
@@ -26,4 +25,3 @@ This is a list of project ideas that are tailored for implementing in Rust. Thes
 | 19 | CLI App       | clap    | Beginner     | < 1 Week         | Shell                  | Not Started | Implement coreutils (ls, find, echo, etc...)          |
 | 20 | CLI App       | chrono  | Intermediate | 1-2 Week         | Data Analysis          | Not Started | Analyze time spent on various tasks                   |
 | 21 | CLI App       | termion | Intermediate | 2-3 Weeks        | Text Manipulation      | Not Started | TUI Markdown Renderer                                 |
-|----|---------------|---------|--------------|------------------|------------------------|-------------|-------------------------------------------------------|
