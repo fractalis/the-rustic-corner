@@ -3,7 +3,7 @@ use quote::{format_ident, quote};
 use syn::parse::{Parse, ParseStream};
 use syn::{
     braced, parse_macro_input, token::Group, DeriveInput, Expr, Field, Ident, LitInt, LitStr,
-    Result, Token, Punctuated
+    Result, Token,
 };
 
 enum AoCItem {
@@ -18,8 +18,7 @@ struct AoCProblem {
 }
 
 impl Parse for AoCProblem {
-    fn parse(input: ParseStream) -> Result<Self> {\
-
+    fn parse(input: ParseStream) -> Result<Self> {
         let year: LitInt = input.parse()?;
         input.parse::<Token![,]>()?;
 
@@ -37,7 +36,7 @@ impl Parse for AoCProblem {
             name,
             input,
         })
-    }p
+    }
 }
 
 #[proc_macro]
@@ -57,23 +56,26 @@ pub fn aoc_problem(args: TokenStream) -> TokenStream {
         name,
         input,
     } = aoc_problem;
-
     let tokens = quote! {
 
-        struct #var_name {
-            year: i32,
-            day: i32,
-            name: String,
-            input: String,
+        pub struct #var_name {
+            pub year: i32,
+            pub day: i32,
+            pub name: String,
+            pub input: String,
         }
 
         impl #var_name {
-            fn new() -> Self {
+            pub fn new() -> Self {
+                let inputFileName = #input.to_string();
+
+                let input_data = std::fs::read_to_string(&inputFileName).expect("File does not exist");
+
                 Self {
                     year: #year as i32,
                     day: #day as i32,
                     name: #name.to_string(),
-                    input: #input.to_string(),
+                    input: input_data,
                 }
             }
         }

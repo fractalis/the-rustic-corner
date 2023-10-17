@@ -5,4 +5,13 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "aoc-2022"
+path = "src/main.rs"
+
 [dependencies]
+aoc_common = { version = "0.1.0", package = "aoc_common", path="../aoc-common" }
+aoc_macros = { version = "0.1.0", package = "aoc_macros", path="../aoc-macros" }

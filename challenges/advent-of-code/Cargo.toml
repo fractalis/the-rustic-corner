@@ -16,7 +16,9 @@ path = "src/main.rs"
 
 aoc_2022 = { version = "0.1.0", package = "aoc_2022", path="./aoc-2022" }
 aoc_macros = { version = "0.1.0", package = "aoc_macros", path="./aoc-macros" }
+aoc_common = { version = "0.1.0", package = "aoc_common", path="./aoc-common" }
 
 [dependencies]
 aoc_2022 = { workspace = true }
 aoc_macros = { workspace = true }
+aoc_common = { workspace = true }
