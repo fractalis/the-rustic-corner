@@ -1,6 +1,6 @@
-//mod arrays;
+mod arrays;
 //mod linked_lists;
-mod strings;
+//mod strings;
 
 fn main() {
     println!("Hello, world!");

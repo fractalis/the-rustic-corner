@@ -2,20 +2,18 @@ use std::collections::HashMap;
 
 pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
     let mut complements: HashMap<i32, i32> = HashMap::new();
-    let mut res: Vec<i32> = vec![];
 
     for (i, num) in nums.iter().enumerate() {
         let complement = target - num;
 
         if complements.contains_key(&complement) {
-            res = vec![i as i32, *complements.get(&complement).unwrap()];
+            return vec![complements[&complement], i as i32];
         }
 
         complements.insert(*num, i as i32);
     }
 
-    res.sort();
-    res
+    Vec::new()
 }
 
 #[cfg(test)]
