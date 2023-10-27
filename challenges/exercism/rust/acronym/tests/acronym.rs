@@ -7,7 +7,6 @@ fn basic() {
 }
 
 #[test]
-#[ignore]
 fn lowercase_words() {
     let input = "Ruby on Rails";
     let output = acronym::abbreviate(input);
@@ -16,7 +15,6 @@ fn lowercase_words() {
 }
 
 #[test]
-#[ignore]
 fn punctuation() {
     let input = "First In, First Out";
     let output = acronym::abbreviate(input);
@@ -25,7 +23,6 @@ fn punctuation() {
 }
 
 #[test]
-#[ignore]
 fn all_caps_word() {
     let input = "GNU Image Manipulation Program";
     let output = acronym::abbreviate(input);
@@ -34,7 +31,6 @@ fn all_caps_word() {
 }
 
 #[test]
-#[ignore]
 fn punctuation_without_whitespace() {
     let input = "Complementary metal-oxide semiconductor";
     let output = acronym::abbreviate(input);
@@ -43,7 +39,6 @@ fn punctuation_without_whitespace() {
 }
 
 #[test]
-#[ignore]
 fn very_long_abbreviation() {
     let input = "Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me";
     let output = acronym::abbreviate(input);
@@ -52,7 +47,6 @@ fn very_long_abbreviation() {
 }
 
 #[test]
-#[ignore]
 fn consecutive_delimiters() {
     let input = "Something - I made up from thin air";
     let output = acronym::abbreviate(input);
@@ -61,7 +55,6 @@ fn consecutive_delimiters() {
 }
 
 #[test]
-#[ignore]
 fn apostrophes() {
     let input = "Halley's Comet";
     let output = acronym::abbreviate(input);
@@ -70,7 +63,6 @@ fn apostrophes() {
 }
 
 #[test]
-#[ignore]
 fn underscore_emphasis() {
     let input = "The Road _Not_ Taken";
     let output = acronym::abbreviate(input);
@@ -79,7 +71,6 @@ fn underscore_emphasis() {
 }
 
 #[test]
-#[ignore]
 fn camelcase() {
     assert_eq!(acronym::abbreviate("HyperText Markup Language"), "HTML");
 }
